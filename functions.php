@@ -7,16 +7,16 @@
  * @package blueboxed
  */
 
-if ( ! defined( '_blueboxed_VERSION' ) ) {
+if (!defined('_blueboxed_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_blueboxed_VERSION', '1.0.0' );
+	define('_blueboxed_VERSION', '1.0.0');
 }
 
 /**
  * Theme Constants
  */
-define( 'blueboxed_THEME_DIR', get_template_directory_uri() );
-define( 'blueboxed_THEME_ASSETS_DIR', get_template_directory_uri() . '/assets' );
+define('blueboxed_THEME_DIR', get_template_directory_uri());
+define('blueboxed_THEME_ASSETS_DIR', get_template_directory_uri() . '/assets');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -25,44 +25,45 @@ define( 'blueboxed_THEME_ASSETS_DIR', get_template_directory_uri() . '/assets' )
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function blueboxed_setup() {
+function blueboxed_setup()
+{
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on blueboxed, use a find and replace
-		* to change 'blueboxed' to the name of your theme in all the template files.
-		*/
-	load_theme_textdomain( 'blueboxed', get_template_directory() . '/languages' );
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on blueboxed, use a find and replace
+	 * to change 'blueboxed' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain('blueboxed', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
-	add_theme_support( 'title-tag' );
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support('title-tag');
 
 	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
-	add_theme_support( 'post-thumbnails' );
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Primary', 'blueboxed' ),
+			'primary' => esc_html__('Primary', 'blueboxed'),
 		)
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		array(
@@ -89,10 +90,10 @@ function blueboxed_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-	
+	add_theme_support('customize-selective-refresh-widgets');
+
 	// Enabling theme support for align full and align wide option for the block editor
-	add_theme_support( 'align-wide' );
+	add_theme_support('align-wide');
 
 	/**
 	 * Add support for core custom logo.
@@ -102,14 +103,14 @@ function blueboxed_setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
+			'height' => 250,
+			'width' => 250,
+			'flex-width' => true,
 			'flex-height' => true,
 		)
 	);
 }
-add_action( 'after_setup_theme', 'blueboxed_setup' );
+add_action('after_setup_theme', 'blueboxed_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -118,93 +119,96 @@ add_action( 'after_setup_theme', 'blueboxed_setup' );
  *
  * @global int $content_width
  */
-function blueboxed_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'blueboxed_content_width', 640 );
+function blueboxed_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('blueboxed_content_width', 640);
 }
-add_action( 'after_setup_theme', 'blueboxed_content_width', 0 );
+add_action('after_setup_theme', 'blueboxed_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function blueboxed_widgets_init() {
+function blueboxed_widgets_init()
+{
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'blueboxed' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'blueboxed' ),
+			'name' => esc_html__('Sidebar', 'blueboxed'),
+			'id' => 'sidebar-1',
+			'description' => esc_html__('Add widgets here.', 'blueboxed'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 1', 'blueboxed' ),
-			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Add widgets here.', 'blueboxed' ),
+			'name' => esc_html__('Footer 1', 'blueboxed'),
+			'id' => 'footer-1',
+			'description' => esc_html__('Add widgets here.', 'blueboxed'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 2', 'blueboxed' ),
-			'id'            => 'footer-2',
-			'description'   => esc_html__( 'Add widgets here.', 'blueboxed' ),
+			'name' => esc_html__('Footer 2', 'blueboxed'),
+			'id' => 'footer-2',
+			'description' => esc_html__('Add widgets here.', 'blueboxed'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 3', 'blueboxed' ),
-			'id'            => 'footer-3',
-			'description'   => esc_html__( 'Add widgets here.', 'blueboxed' ),
+			'name' => esc_html__('Footer 3', 'blueboxed'),
+			'id' => 'footer-3',
+			'description' => esc_html__('Add widgets here.', 'blueboxed'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 }
-add_action( 'widgets_init', 'blueboxed_widgets_init' );
+add_action('widgets_init', 'blueboxed_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function blueboxed_scripts() {
-	
+function blueboxed_scripts()
+{
+
 	/**
 	 * Theme Styles
 	 */
-	wp_enqueue_style( 'blueboxed-style', get_stylesheet_uri(), array(), _blueboxed_VERSION );
-	wp_style_add_data( 'blueboxed-style', 'rtl', 'replace' );
-	wp_enqueue_style( 'blueboxed-theme-bt-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), _blueboxed_VERSION );
-	wp_enqueue_style( 'blueboxed-theme-style', get_template_directory_uri() . '/assets/css/theme-style.css', array(), _blueboxed_VERSION );
-	wp_enqueue_style( 'blueboxed-theme-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), _blueboxed_VERSION );
+	wp_enqueue_style('blueboxed-style', get_stylesheet_uri(), array(), _blueboxed_VERSION);
+	wp_style_add_data('blueboxed-style', 'rtl', 'replace');
+	wp_enqueue_style('blueboxed-theme-bt-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), _blueboxed_VERSION);
+	wp_enqueue_style('blueboxed-theme-style', get_template_directory_uri() . '/assets/css/theme-style.css', array(), _blueboxed_VERSION);
+	wp_enqueue_style('blueboxed-theme-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), _blueboxed_VERSION);
 
 	/**
 	 * Theme Scripts
 	 */
-	wp_enqueue_script( 'blueboxed-bt', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), _blueboxed_VERSION, true );
-	wp_enqueue_script( 'blueboxed-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), _blueboxed_VERSION, true );
-	wp_enqueue_script( 'blueboxed-custom', get_template_directory_uri() . '/assets/js/custom-scripts.js', array('jquery'), _blueboxed_VERSION, true );
+	wp_enqueue_script('blueboxed-bt', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), _blueboxed_VERSION, true);
+	wp_enqueue_script('blueboxed-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery'), _blueboxed_VERSION, true);
+	wp_enqueue_script('blueboxed-custom', get_template_directory_uri() . '/assets/js/custom-scripts.js', array('jquery'), _blueboxed_VERSION, true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'blueboxed_scripts' );
+add_action('wp_enqueue_scripts', 'blueboxed_scripts');
 
 /**
  * Implement the Custom Header feature.
@@ -224,6 +228,6 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }

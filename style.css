@@ -3,8 +3,8 @@ Theme Name: BlueBoxed
 Author: Darshit Rajyaguru
 Author URI: https://profiles.wordpress.org/darshitrajyaguru97/
 Description: Blog theme with Best looking design.
-Version: 1.0.1
-Tested up to: 6.2
+Version: 1.0.8
+Tested up to: 6.4
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -485,8 +485,8 @@ ol {
 	list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
@@ -509,6 +509,7 @@ object {
 img {
 	height: auto;
 	max-width: 100%;
+	border-radius: 8px;
 }
 
 figure {
@@ -663,8 +664,8 @@ textarea {
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li.focus>ul {
 	display: block;
 	left: auto;
 }
@@ -673,8 +674,8 @@ textarea {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li:hover>ul,
+.main-navigation ul li.focus>ul {
 	left: auto;
 }
 
@@ -705,10 +706,8 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
+.site-main .posts-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -871,25 +870,40 @@ textarea {
 .infinite-scroll.neverending .site-footer {
 	display: none;
 }
-footer ul{margin: 0;}
+
+footer ul {
+	margin: 0;
+}
+
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-footer p.col-md-4{padding: 0; line-height: 1.4em;}
-footer h3{margin-bottom: 20px !important;}
-.readmore-meta a{
+
+footer p.col-md-4 {
+	padding: 0;
+	line-height: 1.4em;
+}
+
+footer h3 {
+	margin-bottom: 20px !important;
+}
+
+.readmore-meta a {
 	padding: 5px 15px;
 	border: 2px solid #295096;
+	border-radius: 8px;
 	text-align: center;
 	text-decoration: none !important;
 }
-.readmore-meta a:hover{
+
+.readmore-meta a:hover {
 	background-color: #295096;
 	color: #fff;
 	border: 2px solid #295096;
-	border-radius: 5px;
+	border-radius: 8px;
 }
+
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
@@ -964,4 +978,41 @@ footer h3{margin-bottom: 20px !important;}
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+/* Home Page */
+.entry-meta {
+	font-size: 14px;
+}
+
+.content-posts {
+	display: flex;
+}
+
+.single-post .content-posts {
+	display: block;
+}
+
+.single-post .content-posts .post-thumbnail {
+	margin-right: 0;
+}
+
+.single-post .content-posts .entry-content {
+	margin-top: 15px;
+}
+
+.content-posts .post-thumbnail {
+	width: 100%;
+	margin-right: 1.5em;
+}
+
+.content-posts .entry-content {
+	background-color: #F0F8FF;
+	margin: 0;
+	padding: 25px;
+	border-radius: 8px;
+}
+
+.content-posts .entry-content p {
+	line-height: 1.4em;
 }

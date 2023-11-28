@@ -1,9 +1,9 @@
 === blueboxed ===
 
-Contributors: harshgajipara
+Contributors: darshitrajyaguru
 Tags: custom-logo, custom-menu, featured-images, translation-ready
 Requires at least: 5.1
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 8.0
 Stable tag: 1.0.6
 License: GPLv2 or later
