@@ -9,7 +9,7 @@
 
 if (!defined('_blueboxed_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_blueboxed_VERSION', '1.0.0');
+	define('_blueboxed_VERSION', '1.0.9');
 }
 
 /**
