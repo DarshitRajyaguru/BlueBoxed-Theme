@@ -118,10 +118,10 @@ h1.site-title a{color: #fff;}
 .search-form input[type="submit"] {min-height: 50px; color: white; padding: 0px 20px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; font-size: 16px; background: #3a7ac5;}
 
 /* Page Content */
-h1.entry-title{color: #3a7ac5;}
+h1.entry-title{color: #f0f8ff;}
 h2.wp-block-heading{color: #3a7ac5;margin-bottom: 20px;}
 .blueboxed-page {padding: 50px 0;}
-.blueboxed-post article{border-bottom: 1px solid #3a7ac5; margin-bottom: 15px; padding-bottom: 15px;}
+.blueboxed-page article,.blueboxed-post article{border-bottom: 1px solid #3a7ac5; margin-bottom: 15px; padding-bottom: 15px; background: #6b90ba; padding: 20px 25px; border-radius: 8px;}
 .blueboxed-post article:last-child{border-bottom: 0;}
 .page-header {border-bottom: 2px solid #3a7ac5; margin-bottom: 20px;}
 figure.wp-block-image.size-large.is-style-default img{border-radius: 50px;}
@@ -131,7 +131,7 @@ figure.wp-block-image.size-large.is-style-default img{border-radius: 50px;}
 .blueboxed-search a:hover { color: #3a7ac5;}
 
 /* Page Links */
-h2.entry-title a {color: #3266cf;}
+h2.entry-title a {color: #f0f8ff;}
 .nav-links a,
 .entry-meta a,
 .entry-content a,
@@ -154,7 +154,7 @@ footer{background-color: #3a7ac5;}
 .blueboxed-footer h5,
 .blueboxed-footer h6,
 .blueboxed-footer a,
-.blueboxed-footer span { color: #fff; margin-bottom: 5px; }
+.blueboxed-footer span { color: #fff; margin-bottom: 0px; }
 .social-icons img{width: 45px; height: 45px;}
 .social-icons a{margin-left: 15px;}
 
